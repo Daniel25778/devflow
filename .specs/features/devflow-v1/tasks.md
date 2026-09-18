@@ -356,12 +356,12 @@ T27
 
 **Done when**:
 
-- [ ] Register creates User + Workspace "Meu Workspace" + Board "Board Principal" + columns To Do / In Progress / Done atomically
-- [ ] Duplicate email / validation failures return field errors without partial graph (assert via mock)
-- [ ] Invalid login returns "Email ou senha incorretos"
-- [ ] Integration tests mock Prisma (no real DB)
-- [ ] Gate check passes: `npm test`
-- [ ] Test count: ≥5 tests pass
+- [x] Register creates User + Workspace "Meu Workspace" + Board "Board Principal" + columns To Do / In Progress / Done atomically
+- [x] Duplicate email / validation failures return field errors without partial graph (assert via mock)
+- [x] Invalid login returns "Email ou senha incorretos"
+- [x] Integration tests mock Prisma (no real DB)
+- [x] Gate check passes: `npm test`
+- [x] Test count: ≥5 tests pass (7 auth tests; 20 project tests)
 
 **Tests**: integration
 **Gate**: full
