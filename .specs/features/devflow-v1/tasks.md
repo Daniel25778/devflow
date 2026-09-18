@@ -536,12 +536,12 @@ T27
 
 **Done when**:
 
-- [ ] Create defaults priority MEDIUM and column To Do when unspecified; bumps `updatedAt` for top ordering
-- [ ] Update/delete/move enforce ownership → 404 path covered via mock
-- [ ] Delete is hard delete; move updates `columnId` + `updatedAt`
-- [ ] Integration tests mock Prisma (no real DB); cover validation failures
-- [ ] Gate check passes: `npm test`
-- [ ] Test count: ≥8 tests pass
+- [x] Create defaults priority MEDIUM and column To Do when unspecified; bumps `updatedAt` for top ordering
+- [x] Update/delete/move enforce ownership → 404 path covered via mock
+- [x] Delete is hard delete; move updates `columnId` + `updatedAt`
+- [x] Integration tests mock Prisma (no real DB); cover validation failures
+- [x] Gate check passes: `npm test`
+- [x] Test count: ≥8 tests pass (9 task tests; 29 project tests)
 
 **Tests**: integration
 **Gate**: full
