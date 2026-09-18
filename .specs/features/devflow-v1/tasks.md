@@ -282,9 +282,9 @@ T27
 
 **Done when**:
 
-- [ ] `auth`, `handlers`, `signIn`, `signOut` exported
-- [ ] Session strategy is JWT; `session.user.id` available on server
-- [ ] Gate check passes: `npx tsc --noEmit`
+- [x] `auth`, `handlers`, `signIn`, `signOut` exported
+- [x] Session strategy is JWT; `session.user.id` available on server
+- [x] Gate check passes: `npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
