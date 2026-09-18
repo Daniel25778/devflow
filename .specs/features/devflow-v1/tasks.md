@@ -564,10 +564,10 @@ T27
 
 **Done when**:
 
-- [ ] AND semantics across active filters; empty filters return all
-- [ ] Unit tests cover each filter alone, combined AND, clear-all, zero matches
-- [ ] Gate check passes: `npm test`
-- [ ] Test count: ≥6 tests pass
+- [x] AND semantics across active filters; empty filters return all
+- [x] Unit tests cover each filter alone, combined AND, clear-all, zero matches
+- [x] Gate check passes: `npm test`
+- [x] Test count: ≥6 tests pass (7 filter tests; 36 project tests)
 
 **Tests**: unit
 **Gate**: quick
