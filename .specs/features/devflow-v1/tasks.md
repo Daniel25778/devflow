@@ -768,9 +768,9 @@ T27
 
 **Done when**:
 
-- [ ] Displays by-status, by-priority, and completed-last-7-days counts
-- [ ] Zero tasks → zeros + link to `/board`
-- [ ] Gate check passes: `npm test && npm run lint && npx tsc --noEmit`
+- [x] Displays by-status, by-priority, and completed-last-7-days counts
+- [x] Zero tasks → zeros + link to `/board`
+- [x] Gate check passes: `npm test && npm run lint && npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
