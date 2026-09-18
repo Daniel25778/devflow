@@ -618,8 +618,8 @@ T27
 
 **Done when**:
 
-- [ ] Renders title, priority badge/indicator, tag chips
-- [ ] Gate check passes: `npx tsc --noEmit`
+- [x] Renders title, priority badge/indicator, tag chips
+- [x] Gate check passes: `npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
