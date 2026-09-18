@@ -202,10 +202,10 @@ T27
 
 **Done when**:
 
-- [ ] `dedupeTags` implemented
-- [ ] Unit tests in `src/lib/tags.test.ts` cover case duplicates and empty list
-- [ ] Gate check passes: `npm test`
-- [ ] Test count: ≥3 tests pass (no silent deletions)
+- [x] `dedupeTags` implemented
+- [x] Unit tests in `src/lib/tags.test.ts` cover case duplicates and empty list
+- [x] Gate check passes: `npm test`
+- [x] Test count: ≥3 tests pass (no silent deletions)
 
 **Tests**: unit
 **Gate**: quick
