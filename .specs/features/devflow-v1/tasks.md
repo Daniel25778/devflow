@@ -331,9 +331,9 @@ T27
 
 **Done when**:
 
-- [ ] `requireUser` and ownership helper exported
-- [ ] Ownership miss uses `notFound()` (404)
-- [ ] Gate check passes: `npx tsc --noEmit`
+- [x] `requireUser` and ownership helper exported
+- [x] Ownership miss uses `notFound()` (404)
+- [x] Gate check passes: `npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
