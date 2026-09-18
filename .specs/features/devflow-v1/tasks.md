@@ -384,9 +384,9 @@ T27
 
 **Done when**:
 
-- [ ] Page renders email/password fields and submits to `registerAction`
-- [ ] Shows inline errors from action result
-- [ ] Gate check passes: `npm run lint && npx tsc --noEmit`
+- [x] Page renders email/password fields and submits to `registerAction`
+- [x] Shows inline errors from action result
+- [x] Gate check passes: `npm run lint && npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
