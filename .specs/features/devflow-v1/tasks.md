@@ -642,9 +642,9 @@ T27
 
 **Done when**:
 
-- [ ] Controls for priority, tag, title; clear button resets filters
-- [ ] Does not write filters to URL
-- [ ] Gate check passes: `npx tsc --noEmit`
+- [x] Controls for priority, tag, title; clear button resets filters
+- [x] Does not write filters to URL
+- [x] Gate check passes: `npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
