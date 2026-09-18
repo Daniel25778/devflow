@@ -484,9 +484,9 @@ T27
 
 **Done when**:
 
-- [ ] Unauthenticated access redirects to `/login`
-- [ ] Nav rendered for children routes
-- [ ] Gate check passes: `npx tsc --noEmit`
+- [x] Unauthenticated access redirects to `/login`
+- [x] Nav rendered for children routes
+- [x] Gate check passes: `npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
