@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, type FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 import { createTaskAction, updateTaskAction } from '@/app/actions/tasks';
 import Modal from '@/components/ui/Modal';
 import type { Priority, TaskDTO } from '@/lib/filter-tasks';
@@ -20,14 +20,6 @@ type TaskFormModalProps = {
 
 type FormErrors = Record<string, string[] | undefined>;
 
-const emptyForm = {
-  title: '',
-  description: '',
-  priority: 'MEDIUM' as Priority,
-  tags: '',
-  columnId: '',
-};
-
 export default function TaskFormModal({
   open,
   task,
@@ -35,24 +27,15 @@ export default function TaskFormModal({
   onClose,
   onSaved,
 }: TaskFormModalProps) {
-  const [form, setForm] = useState(emptyForm);
+  const [form, setForm] = useState(() => ({
+    title: task?.title ?? '',
+    description: task?.description ?? '',
+    priority: task?.priority ?? 'MEDIUM' as Priority,
+    tags: task?.tags.join(', ') ?? '',
+    columnId: task?.columnId ?? columns[0]?.id ?? '',
+  }));
   const [errors, setErrors] = useState<FormErrors>({});
   const [pending, setPending] = useState(false);
-
-  useEffect(() => {
-    if (!open) {
-      return;
-    }
-
-    setForm({
-      title: task?.title ?? '',
-      description: task?.description ?? '',
-      priority: task?.priority ?? 'MEDIUM',
-      tags: task?.tags.join(', ') ?? '',
-      columnId: task?.columnId ?? columns[0]?.id ?? '',
-    });
-    setErrors({});
-  }, [columns, open, task]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

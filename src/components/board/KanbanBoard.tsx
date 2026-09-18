@@ -125,8 +125,6 @@ export default function KanbanBoard({ boardName, columns }: KanbanBoardProps) {
     () => Array.from(new Set(allTasks.flatMap((task) => task.tags))).sort(),
     [allTasks],
   );
-  const hasActiveFilters = Boolean(filters.priority || filters.tag || filters.title?.trim());
-
   function handleDragStart({ active }: { active: { id: string | number } }) {
     setActiveTask(allTasks.find((task) => task.id === String(active.id)));
   }
@@ -225,6 +223,7 @@ export default function KanbanBoard({ boardName, columns }: KanbanBoardProps) {
       )}
 
       <TaskFormModal
+        key={`${isFormOpen}-${editingTask?.id ?? 'new'}`}
         columns={columns.map(({ id, name }) => ({ id, name }))}
         onClose={() => setIsFormOpen(false)}
         onSaved={() => router.refresh()}

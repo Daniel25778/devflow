@@ -743,9 +743,9 @@ T27
 
 **Done when**:
 
-- [ ] Loads only current user's board graph
-- [ ] Passes data into `KanbanBoard`
-- [ ] Gate check passes: `npm test && npm run lint && npx tsc --noEmit`
+- [x] Loads only current user's board graph
+- [x] Passes data into `KanbanBoard`
+- [x] Gate check passes: `npm test && npm run lint && npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
