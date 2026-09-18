@@ -409,8 +409,8 @@ T27
 
 **Done when**:
 
-- [ ] Page submits to `loginAction` and shows "Email ou senha incorretos" on failure
-- [ ] Gate check passes: `npm run lint && npx tsc --noEmit`
+- [x] Page submits to `loginAction` and shows "Email ou senha incorretos" on failure
+- [x] Gate check passes: `npm run lint && npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
