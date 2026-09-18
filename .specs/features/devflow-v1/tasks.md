@@ -178,8 +178,8 @@ T27
 
 **Done when**:
 
-- [ ] Singleton exported as `prisma`
-- [ ] Gate check passes: `npx tsc --noEmit`
+- [x] Singleton exported as `prisma`
+- [x] Gate check passes: `npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
