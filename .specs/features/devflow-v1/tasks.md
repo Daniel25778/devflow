@@ -435,9 +435,9 @@ T27
 
 **Done when**:
 
-- [ ] Modal supports open/close, title, children, onClose
-- [ ] Does not use `window.confirm`
-- [ ] Gate check passes: `npx tsc --noEmit`
+- [x] Modal supports open/close, title, children, onClose
+- [x] Does not use `window.confirm`
+- [x] Gate check passes: `npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
