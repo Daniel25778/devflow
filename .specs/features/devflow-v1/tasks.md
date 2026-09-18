@@ -153,9 +153,9 @@ T27
 
 **Done when**:
 
-- [ ] Schema matches design (1:1 workspace/board; `tags String[]`; column unique name/position per board)
-- [ ] `.env.example` documents `DATABASE_URL`, `AUTH_SECRET`, `AUTH_URL`
-- [ ] `npx prisma validate` succeeds (with env present)
+- [x] Schema matches design (1:1 workspace/board; `tags String[]`; column unique name/position per board)
+- [x] `.env` documents `DATABASE_URL`, `AUTH_SECRET`, `AUTH_URL` locally and is never committed
+- [x] `npx prisma validate` succeeds (with env present)
 
 **Tests**: none
 **Gate**: build
