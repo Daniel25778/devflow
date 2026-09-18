@@ -460,8 +460,8 @@ T27
 
 **Done when**:
 
-- [ ] Links to `/board` and `/dashboard`; logout control present
-- [ ] Gate check passes: `npx tsc --noEmit`
+- [x] Links to `/board` and `/dashboard`; logout control present
+- [x] Gate check passes: `npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
