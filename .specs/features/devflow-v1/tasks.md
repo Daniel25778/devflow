@@ -667,9 +667,9 @@ T27
 
 **Done when**:
 
-- [ ] Create and edit modes work via same modal
-- [ ] Inline validation errors shown; column select present for mobile move path
-- [ ] Gate check passes: `npx tsc --noEmit`
+- [x] Create and edit modes work via same modal
+- [x] Inline validation errors shown; column select present for mobile move path
+- [x] Gate check passes: `npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
