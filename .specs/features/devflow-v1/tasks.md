@@ -509,9 +509,9 @@ T27
 
 **Done when**:
 
-- [ ] Brand, supporting sentence, CTAs to `/login` and `/register` present
-- [ ] No dark-mode toggle; light presentation
-- [ ] Gate check passes: `npm run lint && npx tsc --noEmit`
+- [x] Brand, supporting sentence, CTAs to `/login` and `/register` present
+- [x] No dark-mode toggle; light presentation
+- [x] Gate check passes: `npm run lint && npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
