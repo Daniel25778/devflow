@@ -13,12 +13,13 @@ export type DashboardMetrics = {
 };
 
 const priorities: Priority[] = ['LOW', 'MEDIUM', 'HIGH'];
+const statuses = ['To Do', 'In Progress', 'Done'];
 
 export function calculateDashboardMetrics(
   tasks: DashboardTask[],
   now: Date = new Date(),
 ): DashboardMetrics {
-  const statusCounts = new Map<string, number>();
+  const statusCounts = new Map<string, number>(statuses.map((status) => [status, 0]));
   const priorityCounts = new Map<Priority, number>(priorities.map((priority) => [priority, 0]));
   const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
 
@@ -32,7 +33,10 @@ export function calculateDashboardMetrics(
   ).length;
 
   return {
-    byStatus: Array.from(statusCounts, ([columnName, count]) => ({ columnName, count })),
+    byStatus: statuses.map((columnName) => ({
+      columnName,
+      count: statusCounts.get(columnName) ?? 0,
+    })),
     byPriority: priorities.map((priority) => ({
       priority,
       count: priorityCounts.get(priority) ?? 0,

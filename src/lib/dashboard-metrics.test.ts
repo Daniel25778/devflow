@@ -6,7 +6,11 @@ const now = new Date('2026-09-18T12:00:00.000Z');
 describe('calculateDashboardMetrics', () => {
   it('returns zero counts for an empty board', () => {
     expect(calculateDashboardMetrics([], now)).toEqual({
-      byStatus: [],
+      byStatus: [
+        { columnName: 'To Do', count: 0 },
+        { columnName: 'In Progress', count: 0 },
+        { columnName: 'Done', count: 0 },
+      ],
       byPriority: [
         { priority: 'LOW', count: 0 },
         { priority: 'MEDIUM', count: 0 },
