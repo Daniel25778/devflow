@@ -307,8 +307,8 @@ T27
 
 **Done when**:
 
-- [ ] GET/POST handlers exported
-- [ ] Gate check passes: `npx tsc --noEmit`
+- [x] GET/POST handlers exported
+- [x] Gate check passes: `npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
