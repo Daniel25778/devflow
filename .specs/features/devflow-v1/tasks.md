@@ -129,8 +129,8 @@ T27
 
 **Done when**:
 
-- [ ] `vitest.config.ts` resolves `@/` imports
-- [ ] `npm test` runs successfully (0 tests OK)
+- [x] `vitest.config.ts` resolves `@/` imports
+- [x] `npm test` runs successfully (0 tests OK)
 
 **Tests**: none
 **Gate**: build
