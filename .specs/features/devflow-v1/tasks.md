@@ -692,9 +692,9 @@ T27
 
 **Done when**:
 
-- [ ] Confirm calls delete action; Cancel closes without deleting
-- [ ] No usage of `window.confirm` in this file
-- [ ] Gate check passes: `npx tsc --noEmit`
+- [x] Confirm calls delete action; Cancel closes without deleting
+- [x] No usage of `window.confirm` in this file
+- [x] Gate check passes: `npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
