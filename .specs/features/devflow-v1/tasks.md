@@ -254,10 +254,10 @@ T27
 
 **Done when**:
 
-- [ ] Schema enforces spec bounds
-- [ ] Unit tests cover empty title, oversize fields, too many tags, oversize tag
-- [ ] Gate check passes: `npm test`
-- [ ] Test count: ≥5 tests pass
+- [x] Schema enforces spec bounds
+- [x] Unit tests cover empty title, oversize fields, too many tags, oversize tag
+- [x] Gate check passes: `npm test`
+- [x] Test count: ≥5 tests pass
 
 **Tests**: unit
 **Gate**: quick
