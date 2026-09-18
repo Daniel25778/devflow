@@ -10,13 +10,14 @@ import {
   useSensors,
   type DragEndEvent,
 } from '@dnd-kit/core';
-import { useMemo, useState } from 'react';
+import { startTransition, useMemo, useOptimistic, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { moveTaskAction } from '@/app/actions/tasks';
 import BoardFilters from './BoardFilters';
 import ConfirmDeleteModal from './ConfirmDeleteModal';
 import TaskCard from './TaskCard';
 import TaskFormModal from './TaskFormModal';
+import { moveTaskOptimistically } from './move-task-optimistic';
 import { filterTasks, type TaskDTO, type TaskFilters } from '@/lib/filter-tasks';
 
 type BoardColumn = {
@@ -115,8 +116,16 @@ export default function KanbanBoard({ boardName, columns }: KanbanBoardProps) {
   const [deletingTask, setDeletingTask] = useState<TaskDTO>();
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [activeTask, setActiveTask] = useState<TaskDTO>();
+  const [moveError, setMoveError] = useState<string>();
+  const [optimisticColumns, applyOptimisticMove] = useOptimistic(
+    columns,
+    moveTaskOptimistically,
+  );
 
-  const allTasks = useMemo(() => columns.flatMap((column) => column.tasks), [columns]);
+  const allTasks = useMemo(
+    () => optimisticColumns.flatMap((column) => column.tasks),
+    [optimisticColumns],
+  );
   const filteredTaskIds = useMemo(
     () => new Set(filterTasks(allTasks, filters).map((task) => task.id)),
     [allTasks, filters],
@@ -143,8 +152,17 @@ export default function KanbanBoard({ boardName, columns }: KanbanBoardProps) {
       return;
     }
 
-    await moveTaskAction(task.id, columnId);
-    router.refresh();
+    setMoveError(undefined);
+    startTransition(async () => {
+      applyOptimisticMove({ taskId: task.id, columnId });
+
+      try {
+        await moveTaskAction(task.id, columnId);
+        router.refresh();
+      } catch {
+        setMoveError('Não foi possível mover a tarefa. Ela voltou para a coluna original.');
+      }
+    });
   }
 
   function openCreate() {
@@ -172,6 +190,12 @@ export default function KanbanBoard({ boardName, columns }: KanbanBoardProps) {
           Nova tarefa
         </button>
       </div>
+
+      {moveError ? (
+        <p className="mt-4 text-sm text-red-600" role="alert">
+          {moveError}
+        </p>
+      ) : null}
 
       <div className="mt-8">
         <BoardFilters
@@ -205,7 +229,7 @@ export default function KanbanBoard({ boardName, columns }: KanbanBoardProps) {
           onDragStart={handleDragStart}
         >
           <div className="mt-8 grid gap-5 lg:grid-cols-3">
-            {columns
+            {optimisticColumns
               .slice()
               .sort((first, second) => first.position - second.position)
               .map((column) => (
@@ -224,7 +248,7 @@ export default function KanbanBoard({ boardName, columns }: KanbanBoardProps) {
 
       <TaskFormModal
         key={`${isFormOpen}-${editingTask?.id ?? 'new'}`}
-        columns={columns.map(({ id, name }) => ({ id, name }))}
+        columns={optimisticColumns.map(({ id, name }) => ({ id, name }))}
         onClose={() => setIsFormOpen(false)}
         onSaved={() => router.refresh()}
         open={isFormOpen}
