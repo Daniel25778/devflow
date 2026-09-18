@@ -590,10 +590,10 @@ T27
 
 **Done when**:
 
-- [ ] Metrics match spec rules including zero-task case
-- [ ] Unit tests cover mixed columns/priorities and 7-day boundary
-- [ ] Gate check passes: `npm test`
-- [ ] Test count: ≥4 tests pass
+- [x] Metrics match spec rules including zero-task case
+- [x] Unit tests cover mixed columns/priorities and 7-day boundary
+- [x] Gate check passes: `npm test`
+- [x] Test count: ≥4 tests pass (4 metrics tests; 40 project tests)
 
 **Tests**: unit
 **Gate**: quick
