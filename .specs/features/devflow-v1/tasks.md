@@ -228,10 +228,10 @@ T27
 
 **Done when**:
 
-- [ ] Schemas exported for register and login
-- [ ] Unit tests cover invalid email, short password, valid payloads
-- [ ] Gate check passes: `npm test`
-- [ ] Test count: ≥4 tests pass
+- [x] Schemas exported for register and login
+- [x] Unit tests cover invalid email, short password, valid payloads
+- [x] Gate check passes: `npm test`
+- [x] Test count: ≥4 tests pass
 
 **Tests**: unit
 **Gate**: quick
