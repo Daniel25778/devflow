@@ -717,10 +717,10 @@ T27
 
 **Done when**:
 
-- [ ] Columns To Do / In Progress / Done render filtered tasks
-- [ ] DnD to another column invokes move; cancel drop leaves card in place
-- [ ] Empty board CTA and "Nenhuma tarefa encontrada" + clear filters when needed
-- [ ] Gate check passes: `npx tsc --noEmit`
+- [x] Columns To Do / In Progress / Done render filtered tasks
+- [x] DnD to another column invokes move; cancel drop leaves card in place
+- [x] Empty board CTA and "Nenhuma tarefa encontrada" + clear filters when needed
+- [x] Gate check passes: `npx tsc --noEmit`
 
 **Tests**: none
 **Gate**: build
